@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Neon Breaker DX is a premium DX-Ball inspired arcade brick breaker built with HTML5 Canvas and vanilla JavaScript.">
+  <title>Neon Breaker DX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="marquee">
+      <div class="brand-block">
+        <p class="eyebrow">Retro Brick Breaker Arcade</p>
+        <h1>Neon Breaker DX</h1>
+        <p class="brand-copy">A handcrafted DX-Ball inspired campaign with layered brick types, rich drops, multi-ball chaos, laser volleys, shield saves, and classic arcade pacing.</p>
+      </div>
+
+      <div class="control-bank">
+        <button class="action-button ghost" id="menuButton" type="button" aria-label="Return to menu">Menu</button>
+        <button class="action-button ghost" id="pauseButton" type="button" aria-label="Pause the game">Pause</button>
+        <button class="action-button ghost" id="restartButton" type="button" aria-label="Restart the game">Restart</button>
+        <button class="action-button ghost" id="muteButton" type="button" aria-label="Mute audio">Mute</button>
+      </div>
+    </header>
+
+    <section class="hud-strip" aria-label="Game status">
+      <article class="stat-tile">
+        <span class="stat-label">Score</span>
+        <strong id="scoreValue">0</strong>
+      </article>
+      <article class="stat-tile">
+        <span class="stat-label">Lives</span>
+        <strong id="livesValue">3</strong>
+      </article>
+      <article class="stat-tile">
+        <span class="stat-label">Level</span>
+        <strong id="levelValue">1</strong>
+      </article>
+      <article class="stat-tile">
+        <span class="stat-label">Balls</span>
+        <strong id="ballsValue">1</strong>
+      </article>
+      <article class="stat-tile">
+        <span class="stat-label">High Score</span>
+        <strong id="highScoreValue">0</strong>
+      </article>
+    </section>
+
+    <section class="effects-strip" aria-label="Active power-ups">
+      <div class="effects-heading">Active Modules</div>
+      <div class="effects-list" id="effectsValue">
+        <span class="effect-empty">No active power modules</span>
+      </div>
+    </section>
+
+    <main class="cabinet">
+      <section class="play-column">
+        <div class="bezel" id="canvasShell">
+          <canvas id="gameCanvas" width="960" height="720" aria-label="Neon Breaker DX playfield"></canvas>
+
+          <div class="overlay hidden" id="screenOverlay" aria-live="polite">
+            <div class="overlay-card">
+              <p class="overlay-kicker" id="overlayKicker">Arcade Ready</p>
+              <h2 id="overlayTitle">Neon Breaker DX</h2>
+              <p class="overlay-body" id="overlayBody">Shatter the wall, catch the drops, and survive the full ten-stage circuit.</p>
+              <div class="overlay-stats" id="overlayStats"></div>
+              <div class="overlay-actions">
+                <button class="action-button primary" id="primaryAction" type="button">Start Game</button>
+                <button class="action-button secondary hidden" id="secondaryAction" type="button">Back To Menu</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="status-line" id="statusBanner">
+            Move with mouse or touch. Click, tap, or press Space to launch.
+          </div>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <article class="panel-card">
+          <h2>Controls</h2>
+          <p>Mouse and touch are the primary paddle controls. Arrow keys or A / D offer optional backup movement. Click, tap, or Space launches caught balls and fires lasers.</p>
+          <div class="chip-list">
+            <span class="mini-chip">Mouse</span>
+            <span class="mini-chip">Touch</span>
+            <span class="mini-chip">A / D</span>
+            <span class="mini-chip">Arrows</span>
+            <span class="mini-chip">Space</span>
+            <span class="mini-chip">P / Esc</span>
+            <span class="mini-chip">M</span>
+          </div>
+        </article>
+
+        <article class="panel-card">
+          <h2>Drop Table</h2>
+          <div class="legend-grid">
+            <span class="legend-chip expand">EXP</span>
+            <span class="legend-chip shrink">SHR</span>
+            <span class="legend-chip slow">SLO</span>
+            <span class="legend-chip fast">FST</span>
+            <span class="legend-chip laser">LAS</span>
+            <span class="legend-chip multi">MBL</span>
+            <span class="legend-chip sticky">STK</span>
+            <span class="legend-chip life">1UP</span>
+            <span class="legend-chip fire">FIR</span>
+            <span class="legend-chip bonus">BON</span>
+            <span class="legend-chip shield">SHD</span>
+          </div>
+        </article>
+
+        <article class="panel-card">
+          <h2>Brick Types</h2>
+          <p>Ten authored stages mix standard, armored, indestructible, explosive, bonus, and special drop bricks to create tunnels, blocker sections, crossfires, and chain-reaction moments.</p>
+          <div class="chip-list">
+            <span class="brick-chip normal">Normal</span>
+            <span class="brick-chip strong">Strong</span>
+            <span class="brick-chip steel">Steel</span>
+            <span class="brick-chip explosive">Explosive</span>
+            <span class="brick-chip special">Special</span>
+            <span class="brick-chip bonus">Bonus</span>
+          </div>
+        </article>
+      </aside>
+    </main>
+  </div>
+
+  <noscript>
+    <p class="no-script">Neon Breaker DX needs JavaScript enabled to run.</p>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>
