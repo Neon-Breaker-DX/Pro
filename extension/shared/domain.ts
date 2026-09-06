@@ -1,0 +1,2 @@
+export type JobMode = "TEXT_TO_VIDEO" | "FRAME_TO_VIDEO" | "INGREDIENTS_TO_VIDEO" | "TEXT_TO_IMAGE" | "TEXT_TO_VOICE";
+export type JobStatus = "PENDING" | "QUEUED" | "RUNNING" | "PAUSED" | "COMPLETED" | "FAILED" | "CANCELLED" | "RETRYING";

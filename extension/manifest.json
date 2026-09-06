@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "VIDS AUTOMATION",
+  "version": "0.1.0",
+  "description": "Manage persistent batches of supported video, image, and voice generation workflows.",
+  "action": { "default_title": "VIDS AUTOMATION", "default_popup": "popup/index.html" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "permissions": ["storage", "downloads", "tabs", "scripting"],
+  "host_permissions": ["https://vids.google.com/*"],
+  "content_scripts": [{ "matches": ["https://vids.google.com/*"], "js": ["content.js"] }]
+}
