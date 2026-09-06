@@ -16,7 +16,7 @@ npm run test
 npm run lint
 ```
 
-`npm run build` produces a loadable extension in `dist/`. Load it from `chrome://extensions` with Developer mode enabled. The manifest is copied into the distribution as part of the Vite build configuration.
+`npm run build` produces a loadable extension in `dist/`. Load it from `chrome://extensions` with Developer mode enabled. The build preserves the manifest's `popup/index.html`, `background.js`, and `content.js` entry-point paths and copies the manifest to the distribution root.
 
 ## Safety
 
